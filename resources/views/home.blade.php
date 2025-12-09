@@ -1,0 +1,390 @@
+@extends('layouts.app')
+
+@section('content')
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-20 lg:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in-left">
+                    <h1 class="text-5xl lg:text-6xl font-display font-bold mb-6" style="color: var(--solar-blue-dark);">
+                        Solusi Energi Terbarukan
+                    </h1>
+                    <p class="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
+                        Panel surya berkualitas tinggi dengan instalasi profesional untuk masa depan yang lebih hijau dan
+                        hemat energi.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#produk" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                            <i class="fas fa-solar-panel mr-2"></i> Lihat Produk
+                        </a>
+                        <a href="#tentang"
+                            class="px-8 py-4 rounded-lg font-semibold text-lg inline-block border-2 transition-all hover:bg-white"
+                            style="border-color: var(--solar-blue); color: var(--solar-blue);">
+                            <i class="fas fa-info-circle mr-2"></i> Tentang Kami
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block fade-in-right">
+                    <div class="hero-interactive-container" id="heroInteractive">
+                        <!-- Main Card with 3D Tilt Effect -->
+                        <div class="hero-tilt-card">
+                            <div class="hero-card-inner">
+                                <!-- Front Card -->
+                                <div class="hero-card-front">
+                                    <div class="bg-white p-8 rounded-3xl shadow-2xl h-full">
+                                        <div class="rounded-xl overflow-hidden h-full">
+                                            <img src="{{ asset('img/hero-antbox.png') }}" alt="Antbox Hero"
+                                                class="w-full h-full object-contain">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Overlay Info (appears on hover) -->
+                                <div class="hero-card-overlay">
+                                    <div
+                                        class="bg-gradient-to-t from-black/80 via-black/50 to-transparent p-8 rounded-3xl h-full flex flex-col justify-end">
+                                        <div class="text-white">
+                                            <h3 class="text-3xl font-display font-bold mb-3">Solusi Energi Terbarukan</h3>
+                                            <p class="text-lg mb-4 opacity-90">Panel surya berkualitas, instalasi
+                                                profesional</p>
+                                            <div class="flex gap-3">
+                                                <a href="{{ route('produk.list') }}"
+                                                    class="px-6 py-3 bg-white text-solar-blue font-semibold rounded-xl hover:scale-105 transition-transform">
+                                                    <i class="fas fa-solar-panel mr-2"></i>Lihat Produk
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating Elements -->
+                        <div class="hero-float-badge hero-float-1">
+                            <i class="fas fa-leaf"></i>
+                            <span>Ramah Lingkungan</span>
+                        </div>
+                        <div class="hero-float-badge hero-float-2">
+                            <i class="fas fa-bolt"></i>
+                            <span>Hemat Energi</span>
+                        </div>
+                        <div class="hero-float-badge hero-float-3">
+                            <i class="fas fa-tools"></i>
+                            <span>Instalasi Profesional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6 lg:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="fade-in stagger-delay-1 text-center p-8 rounded-xl transition-all hover:shadow-lg"
+                    style="background-color: var(--solar-bg);">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                        style="background-color: var(--solar-blue);">
+                        <i class="fas fa-bolt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Hemat Energi</h3>
+                    <p class="text-gray-600">Kurangi tagihan listrik hingga 70% dengan panel surya berkualitas tinggi</p>
+                </div>
+                <div class="fade-in stagger-delay-2 text-center p-8 rounded-xl transition-all hover:shadow-lg"
+                    style="background-color: var(--solar-bg);">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                        style="background-color: var(--solar-green);">
+                        <i class="fas fa-leaf text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Ramah Lingkungan</h3>
+                    <p class="text-gray-600">Energi bersih yang mengurangi jejak karbon dan melindungi bumi</p>
+                </div>
+                <div class="fade-in stagger-delay-3 text-center p-8 rounded-xl transition-all hover:shadow-lg"
+                    style="background-color: var(--solar-bg);">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
+                        style="background-color: var(--solar-yellow);">
+                        <i class="fas fa-tools text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Instalasi Profesional</h3>
+                    <p class="text-gray-600">Tim ahli berpengalaman untuk instalasi yang aman dan efisien</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-12 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center font-display section-title mb-8 fade-in">Kategori Produk</h2>
+            <div class="flex flex-wrap justify-center gap-4 fade-in">
+                <a href="#produk" class="category-badge px-6 py-3 rounded-full font-semibold">
+                    <i class="fas fa-th mr-2"></i> Semua Produk
+                </a>
+                @foreach($categories as $cat)
+                    <a href="#produk" class="category-badge px-6 py-3 rounded-full font-semibold">
+                        {{$cat->nama_kategori}}
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    @if($featured->count() > 0)
+        <section id="produk" class="py-16 px-6 lg:px-12 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="font-display section-title mb-4">Produk Rekomendasi</h2>
+                    <p class="text-gray-600 text-lg">Pilihan terbaik untuk melengkapi rumah Anda</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    @foreach($featured as $produk)
+                        <div class="product-card group scale-in stagger-delay-{{ $loop->index % 4 + 1 }}">
+                            <div class="relative overflow-hidden aspect-square bg-gray-50">
+                                <img src="{{ $produk->gambar_utama ? asset('storage/' . $produk->gambar_utama) : ($produk->gambar->first() ? asset('storage/' . $produk->gambar->first()->nama_file) : '/img/no-image.png') }}"
+                                    alt="{{$produk->nama_produk}}"
+                                    class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500">
+                                @if($produk->harga_diskon)
+                                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                        SALE
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="p-5">
+                                <div class="text-xs font-semibold mb-2" style="color: var(--brown-light);">
+                                    {{$produk->kategori->nama_kategori ?? 'Produk'}}
+                                </div>
+                                <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--brown-dark);">
+                                    {{$produk->nama_produk}}
+                                </h3>
+                                <div class="mb-4">
+                                    <!-- Price removed -->
+                                </div>
+                                <a href="{{ route('produk.detail', $produk->slug) }}"
+                                    class="btn-primary w-full block text-center py-3 rounded-lg font-semibold">
+                                    <i class="fas fa-shopping-cart mr-2"></i> Lihat Detail
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- All Products Section -->
+    <section class="py-16 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-display section-title mb-4">Semua Produk</h2>
+                <p class="text-gray-600 text-lg">Temukan produk yang sesuai dengan kebutuhan Anda</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                @forelse($products as $produk)
+                    <div class="product-card group scale-in stagger-delay-{{ $loop->index % 4 + 1 }}">
+                        <div class="relative overflow-hidden aspect-square bg-gray-50">
+                            <img src="{{ $produk->gambar_utama ? asset('storage/' . $produk->gambar_utama) : ($produk->gambar->first() ? asset('storage/' . $produk->gambar->first()->nama_file) : '/img/no-image.png') }}"
+                                alt="{{$produk->nama_produk}}"
+                                class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500">
+                            @if($produk->harga_diskon)
+                                <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                    SALE
+                                </div>
+                            @endif
+                        </div>
+                        <div class="p-5">
+                            <div class="text-xs font-semibold mb-2" style="color: var(--brown-light);">
+                                {{$produk->kategori->nama_kategori ?? 'Produk'}}
+                            </div>
+                            <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--brown-dark);">
+                                {{$produk->nama_produk}}
+                            </h3>
+                            <div class="mb-4">
+                                <!-- Price removed -->
+                            </div>
+                            <a href="{{ route('produk.detail', $produk->slug) }}"
+                                class="btn-primary w-full block text-center py-3 rounded-lg font-semibold">
+                                <i class="fas fa-shopping-cart mr-2"></i> Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-span-4 text-center py-16">
+                        <i class="fas fa-box-open text-6xl mb-4" style="color: var(--brown-light);"></i>
+                        <p class="text-gray-500 text-lg">Belum ada produk yang tersedia</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 px-6 lg:px-12 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <h2 class="font-display section-title mb-6">Tentang PLTS Indonesia</h2>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        PLTS Indonesia hadir sebagai solusi energi terbarukan yang menggabungkan teknologi panel surya
+                        terkini dengan layanan instalasi profesional. Kami percaya bahwa setiap rumah dan bisnis berhak
+                        mendapatkan akses ke energi bersih dan terjangkau.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        Dengan menggunakan panel surya berkualitas tinggi dan tim teknisi bersertifikat, produk PLTS
+                        Indonesia dirancang untuk memberikan efisiensi maksimal dan ketahanan jangka panjang.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <div class="text-4xl font-bold mb-2" style="color: var(--solar-blue);">1000+</div>
+                            <div class="text-gray-600">Instalasi Selesai</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold mb-2" style="color: var(--solar-blue);">4.9/5</div>
+                            <div class="text-gray-600">Rating Pelanggan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative fade-in-right">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <div class="aspect-[4/3] w-full"
+                            style="background: linear-gradient(135deg, var(--solar-cream) 0%, var(--solar-blue-light) 100%);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    @if($testimonis->count() > 0)
+        <section class="py-16 px-6 lg:px-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="font-display section-title mb-4">Testimoni Pelanggan</h2>
+                    <p class="text-gray-600 text-lg">Kata mereka yang telah mempercayai Antbox</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    @foreach($testimonis as $testimoni)
+                        <div class="product-card scale-in stagger-delay-{{ $loop->index % 3 + 1 }}">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex-shrink-0">
+                                        @if($testimoni->foto)
+                                            <img src="{{ asset('storage/' . $testimoni->foto) }}"
+                                                alt="{{ $testimoni->nama }}"
+                                                class="w-16 h-16 rounded-full object-cover border-2"
+                                                style="border-color: var(--brown-light);">
+                                        @else
+                                            <div class="w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold"
+                                                style="background-color: var(--brown);">
+                                                {{ strtoupper(substr($testimoni->nama, 0, 1)) }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <h3 class="font-bold text-lg" style="color: var(--brown-dark);">{{ $testimoni->nama }}</h3>
+                                        @if($testimoni->pekerjaan)
+                                            <p class="text-sm text-gray-500">{{ $testimoni->pekerjaan }}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="flex mb-3">
+                                    @for($i = 1; $i <= 5; $i++)
+                                        <i class="fas fa-star {{ $i <= $testimoni->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
+                                </div>
+                                <p class="text-gray-700 leading-relaxed">
+                                    "{{ $testimoni->isi }}"
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Latest Articles Section -->
+    <section class="py-16 px-6 lg:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="font-display section-title mb-4">Artikel & Tips Terbaru</h2>
+                <p class="text-gray-600 text-lg">Inspirasi dan panduan untuk rumah impian Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Artikel akan dimuat di sini dari controller -->
+                <div class="product-card scale-in stagger-delay-1">
+                    <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
+                        style="background: linear-gradient(135deg, var(--cream) 0%, var(--brown-light) 100%);"></div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Tips Mengatur Rak Sepatu</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Simak tips praktis mengatur rak sepatu agar lebih
+                            rapi dan estetik...</p>
+                        <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
+                            style="color: var(--brown);">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card scale-in stagger-delay-2">
+                    <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
+                        style="background: linear-gradient(135deg, var(--brown-light) 0%, var(--brown) 100%);"></div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Desain Interior Minimalis</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Panduan menciptakan interior minimalis yang
+                            nyaman dan fungsional...</p>
+                        <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
+                            style="color: var(--brown);">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card scale-in stagger-delay-3">
+                    <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
+                        style="background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);"></div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Solusi Ruang Kecil</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Maksimalkan ruang terbatas dengan furnitur
+                            penyimpanan yang tepat...</p>
+                        <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
+                            style="color: var(--brown);">
+                            Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center fade-in">
+                <a href="{{ route('artikel.list') }}"
+                    class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                    <i class="fas fa-newspaper mr-2"></i> Lihat Semua Artikel
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="kontak" class="py-20 px-6 lg:px-12 hero-gradient">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h2 class="font-display text-4xl lg:text-5xl font-bold mb-6" style="color: var(--solar-blue-dark);">
+                Siap Beralih ke Energi Terbarukan?
+            </h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk sistem panel surya Anda.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://api.whatsapp.com/send?phone=6281258887895" target="_blank"
+                    class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                    <i class="fab fa-whatsapp mr-2"></i> Hubungi via WhatsApp
+                </a>
+                <a href="mailto:joulwinnofficial@gmail.com"
+                    class="px-8 py-4 rounded-lg font-semibold text-lg inline-block border-2 bg-white transition-all hover:shadow-lg"
+                    style="border-color: var(--solar-blue); color: var(--solar-blue);">
+                    <i class="fas fa-envelope mr-2"></i> Email Kami
+                </a>
+            </div>
+        </div>
+    </section>
+@endsection

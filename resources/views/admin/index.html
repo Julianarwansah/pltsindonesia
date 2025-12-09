@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-amber-50">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-amber-50 text-amber-900 border-r border-amber-200 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0">
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-16 px-6 bg-amber-100 border-b border-amber-200">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-amber-900">Admin Panel</span>
+                </div>
+                <button id="closeSidebar" class="lg:hidden text-amber-900 hover:text-amber-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mt-6 px-3">
+                <a href="#" class="flex items-center px-4 py-3 mb-2 bg-amber-200 text-amber-900 rounded-lg font-medium">
+                    <i class="fas fa-home w-5"></i>
+                    <span class="ml-3">Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mb-2 text-amber-800 hover:bg-amber-100 rounded-lg transition">
+                    <i class="fas fa-users w-5"></i>
+                    <span class="ml-3">Pengguna</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mb-2 text-amber-800 hover:bg-amber-100 rounded-lg transition">
+                    <i class="fas fa-box w-5"></i>
+                    <span class="ml-3">Produk</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mb-2 text-amber-800 hover:bg-amber-100 rounded-lg transition">
+                    <i class="fas fa-shopping-cart w-5"></i>
+                    <span class="ml-3">Pesanan</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mb-2 text-amber-800 hover:bg-amber-100 rounded-lg transition">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span class="ml-3">Laporan</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 mb-2 text-amber-800 hover:bg-amber-100 rounded-lg transition">
+                    <i class="fas fa-cog w-5"></i>
+                    <span class="ml-3">Pengaturan</span>
+                </a>
+            </nav>
+
+            <!-- User Info -->
+            <div class="absolute bottom-0 w-64 p-4 bg-amber-100 border-t border-amber-200">
+                <div class="flex items-center">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=d97706&color=fff" alt="Admin" class="w-10 h-10 rounded-full">
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-amber-900">Admin User</p>
+                        <p class="text-xs text-amber-700">admin@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Overlay untuk mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden hidden"></div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-white shadow-sm z-10 border-b border-amber-200">
+                <div class="flex items-center justify-between px-4 py-4 lg:px-6">
+                    <div class="flex items-center">
+                        <button id="toggleSidebar" class="text-amber-900 hover:text-amber-700 mr-4">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        <h1 class="text-xl lg:text-2xl font-bold text-amber-900">Dashboard</h1>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <!-- Profile Dropdown -->
+                        <div class="relative">
+                            <button id="profileButton" class="flex items-center text-amber-900 hover:text-amber-700 focus:outline-none">
+                                <i class="fas fa-user-circle text-2xl"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-amber-200 py-1 z-50">
+                                <div class="px-4 py-2 border-b border-amber-100">
+                                    <p class="text-sm font-medium text-amber-900">Admin User</p>
+                                    <p class="text-xs text-amber-600">admin@example.com</p>
+                                </div>
+                                <a href="#" class="block px-4 py-2 text-sm text-amber-800 hover:bg-amber-50 transition">
+                                    <i class="fas fa-user mr-2"></i>Profile
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-amber-800 hover:bg-amber-50 transition">
+                                    <i class="fas fa-cog mr-2"></i>Pengaturan
+                                </a>
+                                <div class="border-t border-amber-100 mt-1"></div>
+                                <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition">
+                                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-amber-50 p-4 lg:p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Total Pengguna</p>
+                                <p class="text-2xl font-bold text-amber-900 mt-1">1,234</p>
+                            </div>
+                            <div class="bg-amber-100 rounded-full p-3">
+                                <i class="fas fa-users text-amber-900 text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-600 mt-4">
+                            <i class="fas fa-arrow-up"></i> 12% dari bulan lalu
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Total Produk</p>
+                                <p class="text-2xl font-bold text-amber-900 mt-1">567</p>
+                            </div>
+                            <div class="bg-amber-100 rounded-full p-3">
+                                <i class="fas fa-box text-amber-900 text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-600 mt-4">
+                            <i class="fas fa-arrow-up"></i> 8% dari bulan lalu
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Pesanan Baru</p>
+                                <p class="text-2xl font-bold text-amber-900 mt-1">89</p>
+                            </div>
+                            <div class="bg-amber-100 rounded-full p-3">
+                                <i class="fas fa-shopping-cart text-amber-900 text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-red-600 mt-4">
+                            <i class="fas fa-arrow-down"></i> 3% dari bulan lalu
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-600">Total Pendapatan</p>
+                                <p class="text-2xl font-bold text-amber-900 mt-1">Rp 45M</p>
+                            </div>
+                            <div class="bg-amber-100 rounded-full p-3">
+                                <i class="fas fa-dollar-sign text-amber-900 text-xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-green-600 mt-4">
+                            <i class="fas fa-arrow-up"></i> 18% dari bulan lalu
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tables and Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <!-- Recent Orders -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-amber-900">Pesanan Terbaru</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="overflow-x-auto">
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="text-left text-sm text-gray-600">
+                                            <th class="pb-3">ID</th>
+                                            <th class="pb-3">Pelanggan</th>
+                                            <th class="pb-3">Status</th>
+                                            <th class="pb-3">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm">
+                                        <tr class="border-t">
+                                            <td class="py-3">#12345</td>
+                                            <td class="py-3">John Doe</td>
+                                            <td class="py-3">
+                                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Selesai</span>
+                                            </td>
+                                            <td class="py-3">Rp 500K</td>
+                                        </tr>
+                                        <tr class="border-t">
+                                            <td class="py-3">#12346</td>
+                                            <td class="py-3">Jane Smith</td>
+                                            <td class="py-3">
+                                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Proses</span>
+                                            </td>
+                                            <td class="py-3">Rp 750K</td>
+                                        </tr>
+                                        <tr class="border-t">
+                                            <td class="py-3">#12347</td>
+                                            <td class="py-3">Bob Wilson</td>
+                                            <td class="py-3">
+                                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Baru</span>
+                                            </td>
+                                            <td class="py-3">Rp 320K</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="px-6 py-4 border-b border-gray-200">
+                            <h2 class="text-lg font-semibold text-amber-900">Produk Terlaris</h2>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="bg-amber-100 rounded p-2 mr-3">
+                                            <i class="fas fa-laptop text-amber-900"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Laptop Gaming</p>
+                                            <p class="text-sm text-gray-500">234 terjual</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-amber-900 font-semibold">Rp 15M</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="bg-amber-100 rounded p-2 mr-3">
+                                            <i class="fas fa-mobile-alt text-amber-900"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Smartphone Pro</p>
+                                            <p class="text-sm text-gray-500">189 terjual</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-amber-900 font-semibold">Rp 12M</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="bg-amber-100 rounded p-2 mr-3">
+                                            <i class="fas fa-headphones text-amber-900"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-800">Wireless Headphone</p>
+                                            <p class="text-sm text-gray-500">156 terjual</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-amber-900 font-semibold">Rp 8M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Log -->
+                <div class="bg-white rounded-lg shadow">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h2 class="text-lg font-semibold text-amber-900">Aktivitas Terbaru</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 rounded-full p-2 mr-3">
+                                    <i class="fas fa-user-plus text-amber-900 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-800">Pengguna baru mendaftar</p>
+                                    <p class="text-xs text-gray-500">5 menit yang lalu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 rounded-full p-2 mr-3">
+                                    <i class="fas fa-shopping-bag text-amber-900 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-800">Pesanan baru #12347 dibuat</p>
+                                    <p class="text-xs text-gray-500">15 menit yang lalu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 rounded-full p-2 mr-3">
+                                    <i class="fas fa-box text-amber-900 text-sm"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm text-gray-800">Produk baru ditambahkan</p>
+                                    <p class="text-xs text-gray-500">1 jam yang lalu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleSidebar = document.getElementById('toggleSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const overlay = document.getElementById('overlay');
+        const profileButton = document.getElementById('profileButton');
+        const profileDropdown = document.getElementById('profileDropdown');
+        
+        let sidebarOpen = true;
+
+        // Profile Dropdown Toggle
+        profileButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!profileButton.contains(e.target) && !profileDropdown.contains(e.target)) {
+                profileDropdown.classList.add('hidden');
+            }
+        });
+
+        // Sidebar functionality
+        function handleSidebarToggle() {
+            const isDesktop = window.innerWidth >= 1024;
+            
+            if (isDesktop) {
+                // Desktop: Toggle sidebar slide in/out
+                sidebarOpen = !sidebarOpen;
+                if (sidebarOpen) {
+                    sidebar.classList.remove('-translate-x-full');
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            } else {
+                // Mobile: Show sidebar with overlay
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                sidebarOpen = true;
+            }
+        }
+
+        function closeSidebarMobile() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+            sidebarOpen = false;
+        }
+
+        // Event listeners
+        toggleSidebar.addEventListener('click', handleSidebarToggle);
+        closeSidebar.addEventListener('click', closeSidebarMobile);
+        overlay.addEventListener('click', closeSidebarMobile);
+
+        // Initialize sidebar state based on screen size
+        function initSidebar() {
+            const isDesktop = window.innerWidth >= 1024;
+            if (isDesktop) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.add('hidden');
+                sidebarOpen = true;
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+                sidebarOpen = false;
+            }
+        }
+
+        // Initialize on load
+        initSidebar();
+
+        // Reinitialize on window resize
+        window.addEventListener('resize', () => {
+            const isDesktop = window.innerWidth >= 1024;
+            if (isDesktop) {
+                overlay.classList.add('hidden');
+                if (sidebarOpen) {
+                    sidebar.classList.remove('-translate-x-full');
+                }
+            } else {
+                if (!overlay.classList.contains('hidden')) {
+                    // Keep overlay visible if sidebar is open on mobile
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
