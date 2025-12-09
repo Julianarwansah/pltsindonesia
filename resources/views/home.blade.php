@@ -33,7 +33,7 @@
                                 <div class="hero-card-front">
                                     <div class="bg-white p-8 rounded-3xl shadow-2xl h-full">
                                         <div class="rounded-xl overflow-hidden h-full">
-                                            <img src="{{ asset('img/hero-antbox.png') }}" alt="Antbox Hero"
+                                            <img src="{{ asset('img/hero-plts.png') }}" alt="Antbox Hero"
                                                 class="w-full h-full object-contain">
                                         </div>
                                     </div>
