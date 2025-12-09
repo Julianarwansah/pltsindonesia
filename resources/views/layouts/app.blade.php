@@ -380,17 +380,11 @@
                 <div>
                     <h4 class="font-semibold mb-4" style="color: var(--solar-blue-dark);">Kontak</h4>
                     <ul class="space-y-2 text-gray-600">
-<<<<<<< HEAD
                         <li><i class="fas fa-phone mr-2" style="color: var(--solar-blue);"></i> +62 812-3456-7890</li>
                         <li><i class="fas fa-envelope mr-2" style="color: var(--solar-blue);"></i> info@pltsindonesia.id
                         </li>
                         <li><i class="fas fa-map-marker-alt mr-2" style="color: var(--solar-blue);"></i> PT. Jarwinn
                             Feliciti
-=======
-                        <li><i class="fas fa-phone mr-2" style="color: var(--brown);"></i>+6281258887895</li>
-                        <li><i class="fas fa-envelope mr-2" style="color: var(--brown);"></i>joulwinnofficial@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt mr-2" style="color: var(--brown);"></i> PT. Joulwinn Gelvis
->>>>>>> 0197f237e26d0def35bbf5f4ea5e14b8c865a21c
                             Hotapea<br>BSD Ruko Boulevard, Jalan Raya Taman Tekno Serpong Blok AA No.7, Ciater, Serpong
                             Sub-District, South Tangerang City, Banten 15323, Indonesia</li>
                     </ul>

@@ -70,7 +70,8 @@
                     <form action="#" method="POST" class="space-y-6">
                         @csrf
                         <div>
-                            <label for="nama" class="block text-sm font-semibold mb-2" style="color: var(--solar-blue-dark);">
+                            <label for="nama" class="block text-sm font-semibold mb-2"
+                                style="color: var(--solar-blue-dark);">
                                 Nama Lengkap <span class="text-red-500">*</span>
                             </label>
                             <input type="text" id="nama" name="nama" required
@@ -79,7 +80,8 @@
                         </div>
 
                         <div>
-                            <label for="email" class="block text-sm font-semibold mb-2" style="color: var(--solar-blue-dark);">
+                            <label for="email" class="block text-sm font-semibold mb-2"
+                                style="color: var(--solar-blue-dark);">
                                 Email <span class="text-red-500">*</span>
                             </label>
                             <input type="email" id="email" name="email" required
@@ -88,7 +90,8 @@
                         </div>
 
                         <div>
-                            <label for="telepon" class="block text-sm font-semibold mb-2" style="color: var(--solar-blue-dark);">
+                            <label for="telepon" class="block text-sm font-semibold mb-2"
+                                style="color: var(--solar-blue-dark);">
                                 Nomor Telepon
                             </label>
                             <input type="tel" id="telepon" name="telepon"
@@ -97,7 +100,8 @@
                         </div>
 
                         <div>
-                            <label for="subjek" class="block text-sm font-semibold mb-2" style="color: var(--solar-blue-dark);">
+                            <label for="subjek" class="block text-sm font-semibold mb-2"
+                                style="color: var(--solar-blue-dark);">
                                 Subjek <span class="text-red-500">*</span>
                             </label>
                             <input type="text" id="subjek" name="subjek" required
@@ -106,12 +110,14 @@
                         </div>
 
                         <div>
-                            <label for="pesan" class="block text-sm font-semibold mb-2" style="color: var(--solar-blue-dark);">
+                            <label for="pesan" class="block text-sm font-semibold mb-2"
+                                style="color: var(--solar-blue-dark);">
                                 Pesan <span class="text-red-500">*</span>
                             </label>
                             <textarea id="pesan" name="pesan" rows="6" required
                                 class="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-[var(--solar-blue)] transition resize-none"
-                                style="border-color: var(--solar-cream);" placeholder="Tulis pesan Anda di sini..."></textarea>
+                                style="border-color: var(--solar-cream);"
+                                placeholder="Tulis pesan Anda di sini..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary w-full py-4 rounded-xl font-semibold text-lg">
@@ -151,7 +157,6 @@
                                 </div>
                             </div>
 
-<<<<<<< HEAD
                             <div class="flex gap-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-lg flex items-center justify-center"
@@ -168,10 +173,6 @@
                                     </p>
                                 </div>
                             </div>
-
-=======
-                           
->>>>>>> 0197f237e26d0def35bbf5f4ea5e14b8c865a21c
                             <div class="flex gap-4">
                                 <div class="flex-shrink-0">
                                     <div class="w-12 h-12 rounded-lg flex items-center justify-center"
@@ -238,7 +239,8 @@
 
             <!-- FAQ Section -->
             <div class="mt-20 fade-in">
-                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-12 text-center" style="color: var(--solar-blue-dark);">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-12 text-center"
+                    style="color: var(--solar-blue-dark);">
                     Pertanyaan Umum
                 </h2>
                 <div class="max-w-4xl mx-auto space-y-4">
