@@ -67,7 +67,8 @@
                         <div>
                             <p class="text-xs text-gray-500 uppercase">Tanggal Publikasi</p>
                             <p class="font-medium">
-                                {{ $artikel->published_at ? $artikel->published_at->format('d M Y H:i') : '-' }}</p>
+                                {{ $artikel->published_at ? $artikel->published_at->format('d M Y H:i') : '-' }}
+                            </p>
                         </div>
 
                         <div>
@@ -87,7 +88,8 @@
                         <h3 class="font-medium text-gray-900 mb-4">Tags</h3>
                         <div class="flex flex-wrap gap-2">
                             @foreach($artikel->tags as $tag)
-                                <span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">{{ $tag }}</span>
+                                <span
+                                    class="bg-sky-100 text-[var(--solar-blue-dark)] text-xs px-2 py-1 rounded-full">{{ $tag }}</span>
                             @endforeach
                         </div>
                     </div>

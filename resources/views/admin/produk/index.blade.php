@@ -12,7 +12,7 @@
                     <p class="text-sm text-gray-600 mt-1">Kelola produk dan inventori</p>
                 </div>
                 <a href="{{ route('admin.produk.create') }}"
-                    class="inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
+                    class="inline-flex items-center justify-center px-4 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
                     <i class="fas fa-plus mr-2"></i>
                     <span>Tambah Produk</span>
                 </a>
@@ -40,7 +40,7 @@
                         </label>
                         <input type="text" id="search" name="search" value="{{ request('search') }}"
                             placeholder="Cari nama produk, deskripsi..."
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-[var(--solar-blue)] transition">
                     </div>
 
                     <!-- Kategori Filter -->
@@ -49,7 +49,7 @@
                             <i class="fas fa-tags mr-1 text-gray-400"></i>Kategori
                         </label>
                         <select id="kategori" name="kategori"
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition">
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-[var(--solar-blue)] transition">
                             <option value="">Semua Kategori</option>
                             @foreach ($kategori as $kat)
                                 <option value="{{ $kat->id }}" {{ request('kategori') == $kat->id ? 'selected' : '' }}>
@@ -63,7 +63,7 @@
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-3">
                     <button type="submit"
-                        class="inline-flex items-center px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg transition duration-200 shadow-sm">
+                        class="inline-flex items-center px-6 py-2.5 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white font-medium rounded-lg transition duration-200 shadow-sm">
                         <i class="fas fa-filter mr-2"></i>
                         Terapkan Filter
                     </button>
@@ -79,12 +79,12 @@
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200">
                         <span class="text-sm font-medium text-gray-600">Filter Aktif:</span>
                         @if (request('search'))
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">
+                            <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm font-medium">
                                 <i class="fas fa-search mr-1"></i>{{ request('search') }}
                             </span>
                         @endif
                         @if (request('kategori'))
-                            <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-medium">
+                            <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm font-medium">
                                 <i
                                     class="fas fa-tags mr-1"></i>{{ $kategori->find(request('kategori'))->nama_kategori ?? 'Unknown' }}
                             </span>
@@ -99,28 +99,28 @@
             <!-- Desktop Table View -->
             <div class="hidden lg:block overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gradient-to-r from-amber-50 to-amber-100">
+                    <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                                 No
                             </th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                                 Produk
                             </th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                                 Kategori
                             </th>
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                                 Galeri
                             </th>
-                            <th class="px-6 py-4 text-right text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">
                                 Aksi
                             </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                         @forelse($produk as $item)
-                            <tr class="hover:bg-amber-50 transition duration-150">
+                            <tr class="hover:bg-gray-50 transition duration-150">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                                     {{ $loop->iteration + ($produk->currentPage() - 1) * $produk->perPage() }}
                                 </td>
@@ -128,11 +128,11 @@
                                     <div class="flex items-center">
                                         @if ($item->gambar_utama)
                                             <img src="{{ asset('storage/' . $item->gambar_utama) }}" alt="{{ $item->nama_produk }}"
-                                                class="h-16 w-16 object-cover rounded-lg ring-2 ring-amber-200 mr-3">
+                                                class="h-16 w-16 object-cover rounded-lg ring-2 ring-gray-200 mr-3">
                                         @else
                                             <div
-                                                class="h-16 w-16 bg-gradient-to-br from-amber-200 to-amber-300 rounded-lg flex items-center justify-center mr-3">
-                                                <i class="fas fa-box text-amber-700 text-xl"></i>
+                                                class="h-16 w-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center mr-3">
+                                                <i class="fas fa-box text-gray-400 text-xl"></i>
                                             </div>
                                         @endif
                                         <div class="max-w-xs">
@@ -143,7 +143,7 @@
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <span
-                                        class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-amber-100 text-amber-800">
+                                        class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-sky-100 text-[var(--solar-blue-dark)]">
                                         {{ $item->kategori->nama_kategori ?? '-' }}
                                     </span>
                                 </td>
@@ -194,12 +194,12 @@
                                         <p class="text-gray-500 font-medium">Tidak ada produk</p>
                                         @if (request()->hasAny(['search', 'kategori']))
                                             <a href="{{ route('admin.produk.index') }}"
-                                                class="mt-2 text-amber-600 hover:text-amber-700 text-sm">
+                                                class="mt-2 text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)] text-sm">
                                                 Reset filter untuk melihat semua produk
                                             </a>
                                         @else
                                             <a href="{{ route('admin.produk.create') }}"
-                                                class="mt-4 inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition">
+                                                class="mt-4 inline-flex items-center px-4 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white rounded-lg transition">
                                                 <i class="fas fa-plus mr-2"></i>
                                                 Tambah Produk Pertama
                                             </a>
@@ -215,21 +215,22 @@
             <!-- Mobile Card View -->
             <div class="lg:hidden divide-y divide-gray-200">
                 @forelse($produk as $item)
-                    <div class="p-4 hover:bg-amber-50 transition duration-150">
+                    <div class="p-4 hover:bg-gray-50 transition duration-150">
                         <div class="flex gap-4">
                             @if ($item->gambar_utama)
                                 <img src="{{ asset('storage/' . $item->gambar_utama) }}" alt="{{ $item->nama_produk }}"
-                                    class="h-20 w-20 object-cover rounded-lg ring-2 ring-amber-200 flex-shrink-0">
+                                    class="h-20 w-20 object-cover rounded-lg ring-2 ring-gray-200 flex-shrink-0">
                             @else
                                 <div
-                                    class="h-20 w-20 bg-gradient-to-br from-amber-200 to-amber-300 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-box text-amber-700 text-2xl"></i>
+                                    class="h-20 w-20 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-box text-gray-400 text-2xl"></i>
                                 </div>
                             @endif
                             <div class="flex-1 min-w-0">
                                 <h3 class="text-base font-semibold text-gray-900 mb-1">{{ $item->nama_produk }}</h3>
                                 <div class="flex items-center gap-2 mb-2">
-                                    <span class="px-2 py-1 text-xs font-medium rounded-full bg-amber-100 text-amber-800">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium rounded-full bg-sky-100 text-[var(--solar-blue-dark)]">
                                         {{ $item->kategori->nama_kategori ?? '-' }}
                                     </span>
                                     @if ($item->gambar->count() > 0)

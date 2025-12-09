@@ -12,7 +12,7 @@
                 <p class="text-sm text-gray-600 mt-1">Kelola testimoni pelanggan</p>
             </div>
             <a href="{{ route('admin.testimoni.create') }}"
-                class="inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
+                class="inline-flex items-center justify-center px-4 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
                 <i class="fas fa-plus mr-2"></i>
                 <span>Tambah Testimoni</span>
             </a>
@@ -34,39 +34,39 @@
         <!-- Desktop Table View -->
         <div class="hidden md:block overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gradient-to-r from-amber-50 to-amber-100">
+                <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Foto
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Nama
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Pekerjaan
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Testimoni
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Rating
                         </th>
-                        <th class="px-6 py-4 text-right text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Aksi
                         </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @forelse($testimonis as $testimoni)
-                        <tr class="hover:bg-amber-50 transition duration-150 ease-in-out">
+                        <tr class="hover:bg-gray-50 transition duration-150 ease-in-out">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($testimoni->foto)
                                     <img src="{{ Storage::url($testimoni->foto) }}" alt="{{ $testimoni->nama }}"
-                                        class="h-12 w-12 rounded-full object-cover ring-2 ring-amber-200">
+                                        class="h-12 w-12 rounded-full object-cover ring-2 ring-gray-200">
                                 @else
                                     <div
-                                        class="h-12 w-12 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center">
-                                        <i class="fas fa-user text-amber-700"></i>
+                                        class="h-12 w-12 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                                        <i class="fas fa-user text-gray-400"></i>
                                     </div>
                                 @endif
                             </td>
@@ -128,15 +128,15 @@
         <!-- Mobile Card View -->
         <div class="md:hidden divide-y divide-gray-200">
             @forelse($testimonis as $testimoni)
-                <div class="p-4 hover:bg-amber-50 transition duration-150">
+                <div class="p-4 hover:bg-gray-50 transition duration-150">
                     <div class="flex items-start gap-4">
                         @if ($testimoni->foto)
                             <img src="{{ Storage::url($testimoni->foto) }}" alt="{{ $testimoni->nama }}"
-                                class="h-16 w-16 rounded-full object-cover ring-2 ring-amber-200 flex-shrink-0">
+                                class="h-16 w-16 rounded-full object-cover ring-2 ring-gray-200 flex-shrink-0">
                         @else
                             <div
-                                class="h-16 w-16 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-user text-amber-700 text-xl"></i>
+                                class="h-16 w-16 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-gray-400 text-xl"></i>
                             </div>
                         @endif
                         <div class="flex-1 min-w-0">

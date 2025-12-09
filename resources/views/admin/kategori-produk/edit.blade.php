@@ -14,7 +14,7 @@
             <div class="mb-4 md:mb-0">
                 <div class="flex items-center space-x-2 text-sm text-gray-500 mb-2">
                     <a href="{{ route('admin.kategori-produks.index') }}"
-                        class="text-orange-600 hover:text-orange-800 transition-colors duration-200">
+                        class="text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)] transition-colors duration-200">
                         Kategori
                     </a>
                     <span>/</span>
@@ -67,7 +67,7 @@
                                 *</label>
                             <input type="text" name="nama_kategori" id="nama_kategori"
                                 value="{{ old('nama_kategori', $kategori->nama_kategori) }}" required
-                                class="w-full px-3 md:px-4 py-2 md:py-3 text-lg font-semibold border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                class="w-full px-3 md:px-4 py-2 md:py-3 text-lg font-semibold border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-200 focus:border-[var(--solar-blue)]"
                                 placeholder="Masukkan nama kategori...">
                             @error('nama_kategori')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -122,7 +122,7 @@
                         <div class="mb-4">
                             <label for="gambar" class="block text-sm font-medium text-gray-700 mb-2">Ganti Gambar</label>
                             <input type="file" name="gambar" id="gambar" accept="image/*"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500">
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-200 focus:border-[var(--solar-blue)]">
                             <p class="mt-1 text-xs text-gray-500">
                                 Biarkan kosong jika tidak ingin mengubah. Format: JPEG, PNG, JPG, GIF, WEBP. Max: 5MB.
                             </p>
@@ -149,7 +149,7 @@
                                 Batal
                             </a>
                             <button type="submit"
-                                class="px-6 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition flex items-center justify-center w-full md:w-auto">
+                                class="px-6 py-2 bg-[var(--solar-blue)] text-white rounded-md hover:bg-[var(--solar-blue-dark)] transition flex items-center justify-center w-full md:w-auto">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7"></path>
@@ -170,7 +170,7 @@
                     <div class="mb-4">
                         <label for="urutan" class="block text-sm font-medium text-gray-700 mb-2">Urutan</label>
                         <input type="number" name="urutan" id="urutan" value="{{ old('urutan', $kategori->urutan) }}"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-200 focus:border-[var(--solar-blue)]"
                             min="0">
                         <p class="mt-1 text-xs text-gray-500">Biarkan kosong untuk urutan otomatis</p>
                         @error('urutan')
@@ -187,14 +187,14 @@
                         <label for="meta_title" class="block text-sm font-medium text-gray-700 mb-2">Meta Title</label>
                         <input type="text" name="meta_title" id="meta_title"
                             value="{{ old('meta_title', $kategori->meta_title) }}"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500">
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-200 focus:border-[var(--solar-blue)]">
                     </div>
 
                     <div class="mb-4">
                         <label for="meta_description" class="block text-sm font-medium text-gray-700 mb-2">Meta
                             Description</label>
                         <textarea name="meta_description" id="meta_description" rows="3"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500">{{ old('meta_description', $kategori->meta_description) }}</textarea>
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-200 focus:border-[var(--solar-blue)]">{{ old('meta_description', $kategori->meta_description) }}</textarea>
                     </div>
 
                     <div class="mb-4">
@@ -202,7 +202,7 @@
                             Keywords</label>
                         <input type="text" name="meta_keywords" id="meta_keywords"
                             value="{{ old('meta_keywords', $kategori->meta_keywords) }}"
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500">
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-sky-200 focus:border-[var(--solar-blue)]">
                     </div>
                 </div>
 

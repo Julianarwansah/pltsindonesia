@@ -7,7 +7,7 @@
     <!-- Back Button -->
     <div class="mb-6">
         <a href="{{ route('admin.testimoni.index') }}"
-            class="inline-flex items-center text-gray-600 hover:text-amber-700 transition duration-150">
+            class="inline-flex items-center text-gray-600 hover:text-[var(--solar-blue)] transition duration-150">
             <i class="fas fa-arrow-left mr-2"></i>
             <span class="font-medium">Kembali ke Daftar</span>
         </a>
@@ -15,9 +15,9 @@
 
     <!-- Main Form Card -->
     <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <div class="bg-gradient-to-r from-amber-50 to-amber-100 px-6 py-4 border-b border-amber-200">
-            <h2 class="text-xl font-bold text-amber-900">Tambah Testimoni Baru</h2>
-            <p class="text-sm text-amber-700 mt-1">Isi form di bawah untuk menambahkan testimoni</p>
+        <div class="bg-gradient-to-r from-sky-50 to-sky-100 px-6 py-4 border-b border-sky-200">
+            <h2 class="text-xl font-bold text-[var(--solar-blue-dark)]">Tambah Testimoni Baru</h2>
+            <p class="text-sm text-[var(--solar-blue)] mt-1">Isi form di bawah untuk menambahkan testimoni</p>
         </div>
 
         <form action="{{ route('admin.testimoni.store') }}" method="POST" enctype="multipart/form-data" class="p-6">
@@ -31,7 +31,7 @@
                             Nama Lengkap <span class="text-red-500">*</span>
                         </label>
                         <input type="text" name="nama" id="nama" value="{{ old('nama') }}"
-                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition duration-150 @error('nama') border-red-500 @enderror"
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[var(--solar-blue)] focus:ring-2 focus:ring-sky-200 transition duration-150 @error('nama') border-red-500 @enderror"
                             placeholder="Masukkan nama lengkap" required>
                         @error('nama')
                             <p class="text-red-500 text-xs mt-1 flex items-center">
@@ -46,7 +46,7 @@
                             Pekerjaan / Jabatan
                         </label>
                         <input type="text" name="pekerjaan" id="pekerjaan" value="{{ old('pekerjaan') }}"
-                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition duration-150 @error('pekerjaan') border-red-500 @enderror"
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[var(--solar-blue)] focus:ring-2 focus:ring-sky-200 transition duration-150 @error('pekerjaan') border-red-500 @enderror"
                             placeholder="Contoh: CEO PT. ABC">
                         @error('pekerjaan')
                             <p class="text-red-500 text-xs mt-1 flex items-center">
@@ -61,7 +61,7 @@
                             Rating <span class="text-red-500">*</span>
                         </label>
                         <select name="rating" id="rating"
-                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition duration-150 @error('rating') border-red-500 @enderror">
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[var(--solar-blue)] focus:ring-2 focus:ring-sky-200 transition duration-150 @error('rating') border-red-500 @enderror">
                             <option value="5" {{ old('rating') == 5 ? 'selected' : '' }}>⭐⭐⭐⭐⭐ (5 Bintang)</option>
                             <option value="4" {{ old('rating') == 4 ? 'selected' : '' }}>⭐⭐⭐⭐ (4 Bintang)</option>
                             <option value="3" {{ old('rating') == 3 ? 'selected' : '' }}>⭐⭐⭐ (3 Bintang)</option>
@@ -84,13 +84,13 @@
                             Foto Profil
                         </label>
                         <div
-                            class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-amber-500 transition duration-150">
+                            class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-[var(--solar-blue)] transition duration-150">
                             <input type="file" name="foto" id="foto" accept="image/*" class="hidden"
                                 onchange="previewImage(event)">
                             <label for="foto" class="cursor-pointer">
                                 <div id="preview-container" class="hidden mb-4">
                                     <img id="image-preview"
-                                        class="mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-amber-200">
+                                        class="mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-sky-200">
                                 </div>
                                 <div id="upload-placeholder">
                                     <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-2"></i>
@@ -112,7 +112,7 @@
                             Isi Testimoni <span class="text-red-500">*</span>
                         </label>
                         <textarea name="isi" id="isi" rows="6"
-                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition duration-150 resize-none @error('isi') border-red-500 @enderror"
+                            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:border-[var(--solar-blue)] focus:ring-2 focus:ring-sky-200 transition duration-150 resize-none @error('isi') border-red-500 @enderror"
                             placeholder="Tuliskan testimoni pelanggan..." required>{{ old('isi') }}</textarea>
                         @error('isi')
                             <p class="text-red-500 text-xs mt-1 flex items-center">
@@ -126,7 +126,7 @@
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-gray-200">
                 <button type="submit"
-                    class="flex-1 sm:flex-none inline-flex items-center justify-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg shadow-md transition duration-200 transform hover:scale-105">
+                    class="flex-1 sm:flex-none inline-flex items-center justify-center px-6 py-3 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white font-semibold rounded-lg shadow-md transition duration-200 transform hover:scale-105">
                     <i class="fas fa-save mr-2"></i>
                     Simpan Testimoni
                 </button>

@@ -19,7 +19,8 @@
                         <p class="text-sm text-gray-600">Total Pengguna</p>
                         <p class="text-3xl font-bold text-gray-800 mt-1">{{ number_format($stats['total_users']) }}</p>
                         <p class="text-xs text-gray-500 mt-2">Admin: {{ $stats['admin_users'] }} | Penulis:
-                            {{ $stats['penulis_users'] }}</p>
+                            {{ $stats['penulis_users'] }}
+                        </p>
                     </div>
                     <div class="bg-blue-100 rounded-full p-4">
                         <i class="fas fa-users text-blue-600 text-2xl"></i>
@@ -35,8 +36,8 @@
                         <p class="text-3xl font-bold text-gray-800 mt-1">{{ number_format($stats['total_products']) }}</p>
                         <p class="text-xs text-gray-500 mt-2">{{ $stats['total_categories'] }} Kategori</p>
                     </div>
-                    <div class="bg-amber-100 rounded-full p-4">
-                        <i class="fas fa-box text-amber-600 text-2xl"></i>
+                    <div class="bg-orange-100 rounded-full p-4">
+                        <i class="fas fa-box text-orange-600 text-2xl"></i>
                     </div>
                 </div>
             </div>
@@ -76,7 +77,8 @@
             <div class="bg-white rounded-lg shadow-md">
                 <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
                     <h2 class="text-lg font-semibold text-gray-800">Artikel Terbaru</h2>
-                    <a href="{{ route('admin.artikels.index') }}" class="text-sm text-amber-600 hover:text-amber-700">Lihat
+                    <a href="{{ route('admin.artikels.index') }}"
+                        class="text-sm text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">Lihat
                         Semua</a>
                 </div>
                 <div class="p-6">
@@ -105,7 +107,8 @@
             <div class="bg-white rounded-lg shadow-md">
                 <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
                     <h2 class="text-lg font-semibold text-gray-800">Produk Terbaru</h2>
-                    <a href="{{ route('admin.produk.index') }}" class="text-sm text-amber-600 hover:text-amber-700">Lihat
+                    <a href="{{ route('admin.produk.index') }}"
+                        class="text-sm text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">Lihat
                         Semua</a>
                 </div>
                 <div class="p-6">
@@ -172,7 +175,8 @@
                                 <h3 class="text-sm font-medium text-gray-800">{{ $category->nama_kategori }}</h3>
                             </div>
                             <div>
-                                <span class="px-3 py-1 text-sm rounded-full bg-amber-100 text-amber-800 font-medium">
+                                <span
+                                    class="px-3 py-1 text-sm rounded-full bg-sky-100 text-[var(--solar-blue-dark)] font-medium">
                                     {{ $category->produk_count }} produk
                                 </span>
                             </div>
@@ -188,7 +192,8 @@
         <div class="bg-white rounded-lg shadow-md mt-6">
             <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
                 <h2 class="text-lg font-semibold text-gray-800">Aktivitas Terbaru</h2>
-                <a href="{{ route('admin.activity-logs.index') }}" class="text-sm text-amber-600 hover:text-amber-700">Lihat
+                <a href="{{ route('admin.activity-logs.index') }}"
+                    class="text-sm text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">Lihat
                     Semua</a>
             </div>
             <div class="p-6">

@@ -12,7 +12,7 @@
                 <p class="text-sm text-gray-600 mt-1">Kelola kategori dan klasifikasi produk</p>
             </div>
             <a href="{{ route('admin.kategori-produks.create') }}"
-                class="inline-flex items-center justify-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
+                class="inline-flex items-center justify-center px-4 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white font-medium rounded-lg shadow-sm transition duration-200 ease-in-out transform hover:scale-105">
                 <i class="fas fa-plus mr-2"></i>
                 <span>Tambah Kategori</span>
             </a>
@@ -43,43 +43,43 @@
         <!-- Desktop Table View -->
         <div class="hidden md:block overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gradient-to-r from-amber-50 to-amber-100">
+                <thead class="bg-gray-50">
                     <tr>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Urutan
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Kategori
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Slug
                         </th>
-                        <th class="px-6 py-4 text-left text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Jumlah Produk
                         </th>
-                        <th class="px-6 py-4 text-right text-xs font-semibold text-amber-900 uppercase tracking-wider">
+                        <th class="px-6 py-4 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">
                             Aksi
                         </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @forelse($kategoris as $kategori)
-                        <tr class="hover:bg-amber-50 transition duration-150">
+                        <tr class="hover:bg-gray-50 transition duration-150">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span
-                                    class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-amber-100 text-amber-700 font-semibold text-sm">
+                                    class="inline-flex items-center justify-center h-8 w-8 rounded-full bg-sky-100 text-[var(--solar-blue)] font-semibold text-sm">
                                     {{ $kategori->urutan }}
                                 </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     @if ($kategori->gambar)
-                                        <img class="h-12 w-12 rounded-full object-cover mr-3 ring-2 ring-amber-200"
+                                        <img class="h-12 w-12 rounded-full object-cover mr-3 ring-2 ring-gray-200"
                                             src="{{ Storage::url($kategori->gambar) }}" alt="">
                                     @else
                                         <div
-                                            class="h-12 w-12 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 mr-3 flex items-center justify-center">
-                                            <i class="fas fa-box text-amber-700"></i>
+                                            class="h-12 w-12 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 mr-3 flex items-center justify-center">
+                                            <i class="fas fa-box text-gray-400"></i>
                                         </div>
                                     @endif
                                     <div class="text-sm font-semibold text-gray-900">{{ $kategori->nama_kategori }}</div>
@@ -140,21 +140,21 @@
         <!-- Mobile Card View -->
         <div class="md:hidden divide-y divide-gray-200">
             @forelse($kategoris as $kategori)
-                <div class="p-4 hover:bg-amber-50 transition duration-150">
+                <div class="p-4 hover:bg-gray-50 transition duration-150">
                     <div class="flex items-start gap-4">
                         @if ($kategori->gambar)
-                            <img class="h-16 w-16 rounded-full object-cover ring-2 ring-amber-200 flex-shrink-0"
+                            <img class="h-16 w-16 rounded-full object-cover ring-2 ring-gray-200 flex-shrink-0"
                                 src="{{ Storage::url($kategori->gambar) }}" alt="">
                         @else
                             <div
-                                class="h-16 w-16 rounded-full bg-gradient-to-br from-amber-200 to-amber-300 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-box text-amber-700 text-xl"></i>
+                                class="h-16 w-16 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-box text-gray-400 text-xl"></i>
                             </div>
                         @endif
                         <div class="flex-1 min-w-0">
                             <div class="flex items-center gap-2 mb-2">
                                 <span
-                                    class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 text-amber-700 font-semibold text-xs">
+                                    class="inline-flex items-center justify-center h-6 w-6 rounded-full bg-sky-100 text-[var(--solar-blue)] font-semibold text-xs">
                                     {{ $kategori->urutan }}
                                 </span>
                                 <h3 class="text-base font-semibold text-gray-900">{{ $kategori->nama_kategori }}</h3>

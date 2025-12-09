@@ -34,7 +34,7 @@
                                 Nama Produk <span class="text-red-500">*</span>
                             </label>
                             <input type="text" id="nama_produk" name="nama_produk" value="{{ old('nama_produk') }}" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('nama_produk') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('nama_produk') border-red-500 @enderror">
                             @error('nama_produk')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -46,7 +46,7 @@
                                 Kategori <span class="text-red-500">*</span>
                             </label>
                             <select id="kategori_id" name="kategori_id" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('kategori_id') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('kategori_id') border-red-500 @enderror">
                                 <option value="">Pilih Kategori</option>
                                 @foreach($kategori as $kat)
                                     <option value="{{ $kat->id }}" {{ old('kategori_id') == $kat->id ? 'selected' : '' }}>
@@ -80,7 +80,7 @@
                                 Gambar Utama
                             </label>
                             <input type="file" id="gambar_utama" name="gambar_utama" accept="image/*"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('gambar_utama') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('gambar_utama') border-red-500 @enderror">
                             <p class="mt-1 text-xs text-gray-500">Format: JPG, PNG, GIF (Max: 2MB)</p>
                             @error('gambar_utama')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -93,7 +93,7 @@
                                 Galeri Produk (Multiple)
                             </label>
                             <input type="file" id="gambar_produk" name="gambar_produk[]" accept="image/*" multiple
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('gambar_produk') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('gambar_produk') border-red-500 @enderror">
                             <p class="mt-1 text-xs text-gray-500">Pilih beberapa gambar sekaligus untuk galeri produk</p>
                             @error('gambar_produk')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -113,7 +113,7 @@
                                 Meta Title
                             </label>
                             <input type="text" id="meta_title" name="meta_title" value="{{ old('meta_title') }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('meta_title') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('meta_title') border-red-500 @enderror">
                             @error('meta_title')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -126,7 +126,7 @@
                             </label>
                             <input type="text" id="meta_keywords" name="meta_keywords" value="{{ old('meta_keywords') }}"
                                 placeholder="keyword1, keyword2, keyword3"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('meta_keywords') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('meta_keywords') border-red-500 @enderror">
                             @error('meta_keywords')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -138,7 +138,7 @@
                                 Meta Description
                             </label>
                             <textarea id="meta_description" name="meta_description" rows="3"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('meta_description') border-red-500 @enderror">{{ old('meta_description') }}</textarea>
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('meta_description') border-red-500 @enderror">{{ old('meta_description') }}</textarea>
                             @error('meta_description')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -150,7 +150,7 @@
                                 OG Image (Social Media)
                             </label>
                             <input type="file" id="og_image" name="og_image" accept="image/*"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('og_image') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('og_image') border-red-500 @enderror">
                             @error('og_image')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -162,7 +162,7 @@
                                 Canonical URL
                             </label>
                             <input type="url" id="canonical_url" name="canonical_url" value="{{ old('canonical_url') }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent @error('canonical_url') border-red-500 @enderror">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent @error('canonical_url') border-red-500 @enderror">
                             @error('canonical_url')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -177,7 +177,7 @@
                         Batal
                     </a>
                     <button type="submit"
-                        class="px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors">
+                        class="px-6 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white rounded-lg transition-colors">
                         <i class="fas fa-save mr-2"></i>
                         Simpan Produk
                     </button>
@@ -236,8 +236,8 @@
         }
 
         .tox-tinymce:focus-within {
-            border-color: #d97706 !important;
-            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1) !important;
+            border-color: var(--solar-blue) !important;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1) !important;
         }
 
         @media (max-width: 768px) {

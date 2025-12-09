@@ -9,7 +9,7 @@
             <h1 class="text-2xl font-bold text-gray-800">Detail Produk</h1>
             <div class="flex gap-2">
                 <a href="{{ route('admin.produk.edit', $produk->id) }}"
-                    class="inline-flex items-center px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors">
+                    class="inline-flex items-center px-4 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white rounded-lg transition-colors">
                     <i class="fas fa-edit mr-2"></i>
                     Edit
                 </a>
@@ -126,7 +126,7 @@
                             <div>
                                 <p class="text-sm text-gray-500">Canonical URL</p>
                                 <a href="{{ $produk->canonical_url }}" target="_blank"
-                                    class="text-base text-amber-600 hover:text-amber-700">
+                                    class="text-base text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">
                                     {{ $produk->canonical_url }}
                                 </a>
                             </div>

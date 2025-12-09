@@ -28,9 +28,9 @@
             <div class="lg:col-span-2">
                 <div class="flex items-center mb-8">
                     @if($user->avatar)
-                        <img src="{{ Storage::url($user->avatar) }}" alt="{{ $user->nama_lengkap }}" class="h-24 w-24 rounded-full object-cover mr-6 border-4 border-amber-100">
+                        <img src="{{ Storage::url($user->avatar) }}" alt="{{ $user->nama_lengkap }}" class="h-24 w-24 rounded-full object-cover mr-6 border-4 border-sky-100">
                     @else
-                        <div class="h-24 w-24 rounded-full bg-gray-200 mr-6 flex items-center justify-center border-4 border-amber-100">
+                        <div class="h-24 w-24 rounded-full bg-gray-200 mr-6 flex items-center justify-center border-4 border-sky-100">
                             <i class="fas fa-user text-4xl text-gray-400"></i>
                         </div>
                     @endif
