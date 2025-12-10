@@ -25,8 +25,8 @@
                     </div>
                     <h3 class="font-display text-xl font-bold mb-3" style="color: var(--navy-primary);">Telepon</h3>
                     <p class="text-[var(--gray-medium)] mb-2">Hubungi kami via telepon</p>
-                    <a href="tel:+6281258887895" class="font-semibold hover:underline" style="color: var(--accent-green);">
-                        +62 812-5888-7895
+                    <a href="tel:+6281258885595" class="font-semibold hover:underline" style="color: var(--accent-green);">
+                        +62 812-5888-5595
                     </a>
                 </div>
 
@@ -37,7 +37,7 @@
                     </div>
                     <h3 class="font-display text-xl font-bold mb-3" style="color: var(--navy-primary);">WhatsApp</h3>
                     <p class="text-[var(--gray-medium)] mb-2">Chat dengan customer service</p>
-                    <a href="https://api.whatsapp.com/send?phone=6281258887895" target="_blank"
+                    <a href="https://api.whatsapp.com/send?phone=6281258885595" target="_blank"
                         class="font-semibold hover:underline" style="color: var(--accent-green);">
                         Chat Sekarang
                     </a>
@@ -50,9 +50,9 @@
                     </div>
                     <h3 class="font-display text-xl font-bold mb-3" style="color: var(--navy-primary);">Email</h3>
                     <p class="text-[var(--gray-medium)] mb-2">Kirim email kepada kami</p>
-                    <a href="mailto:joulwinnofficial@gmail.com" class="font-semibold hover:underline"
+                    <a href="mailto:jarwinnofficial@gmail.com" class="font-semibold hover:underline"
                         style="color: var(--accent-green);">
-                        joulwinnofficial@gmail.com
+                        jarwinnofficial@gmail.com
                     </a>
                 </div>
             </div>
@@ -70,8 +70,7 @@
                     <form action="#" method="POST" class="space-y-6">
                         @csrf
                         <div>
-                            <label for="nama" class="block text-sm font-semibold mb-2"
-                                style="color: var(--navy-primary);">
+                            <label for="nama" class="block text-sm font-semibold mb-2" style="color: var(--navy-primary);">
                                 Nama Lengkap <span class="text-red-500">*</span>
                             </label>
                             <input type="text" id="nama" name="nama" required
@@ -80,8 +79,7 @@
                         </div>
 
                         <div>
-                            <label for="email" class="block text-sm font-semibold mb-2"
-                                style="color: var(--navy-primary);">
+                            <label for="email" class="block text-sm font-semibold mb-2" style="color: var(--navy-primary);">
                                 Email <span class="text-red-500">*</span>
                             </label>
                             <input type="email" id="email" name="email" required
@@ -110,8 +108,7 @@
                         </div>
 
                         <div>
-                            <label for="pesan" class="block text-sm font-semibold mb-2"
-                                style="color: var(--navy-primary);">
+                            <label for="pesan" class="block text-sm font-semibold mb-2" style="color: var(--navy-primary);">
                                 Pesan <span class="text-red-500">*</span>
                             </label>
                             <textarea id="pesan" name="pesan" rows="6" required
@@ -150,9 +147,10 @@
                                 <div>
                                     <h4 class="font-bold mb-1" style="color: var(--navy-primary);">Alamat</h4>
                                     <p class="text-[var(--gray-medium)]">
-                                        PT JOULWINN GELVIS HOTAPEA<br>
-                                        BSD Ruko Boulevard, Jalan Raya Taman Tekno Serpong Blok AA No.7, Ciater, Serpong
-                                        Sub-District, South Tangerang City, Banten 15323, Indonesia
+                                        PT. Jarwinn Feliciti Hotapea<br>
+                                        Jl. Raya Serpong<br>
+                                        Tangerang Selatan, Banten<br>
+                                        Indonesia
                                     </p>
                                 </div>
                             </div>
@@ -195,7 +193,7 @@
                     <!-- Map -->
                     <div class="rounded-xl overflow-hidden shadow-lg" style="border: 3px solid var(--solar-cream);">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.23964241693!2d106.68942999999999!3d-6.229386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1234567890"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d388620.20969090937!2d106.10729747343753!3d-6.327590000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5356de1f009%3A0x1f2cd529ce371210!2sPT.%20Jarwinn%20Feliciti%20Hotapea!5e1!3m2!1sid!2sid!4v1765355347442!5m2!1sid!2sid"
                             width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>

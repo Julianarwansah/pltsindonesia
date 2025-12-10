@@ -21,10 +21,14 @@
     </style>
     <style>
         :root {
-            --navy-primary: #25255C;
-            --navy-dark: #1a1a40;
-            --accent-green: #0EA5E9;
-            --accent-light-green: #38BDF8;
+            --navy-primary: #1A2B4C;
+            /* Deep Navy Blue - SolarKita Primary */
+            --navy-dark: #0F1A2E;
+            /* Darker navy for text */
+            --accent-green: #0077B6;
+            /* Dark Ocean Blue - Darker accent */
+            --accent-light-green: #0096C7;
+            /* Medium blue */
             --white: #FFFFFF;
             --gray-light: #F8F9FA;
             --gray-medium: #626963;
@@ -760,6 +764,25 @@
             const nav = document.querySelector('nav');
             const navInner = document.querySelector('nav > div');
             let lastScrollTop = 0;
+            
+            // Check if current page is homepage
+            const isHomepage = document.querySelector('#home') !== null;
+
+            // Set initial navbar state based on page
+            function setInitialNavbarState() {
+                if (!isHomepage) {
+                    // Non-homepage: solid white with dark text from start
+                    navInner.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                    navInner.style.backdropFilter = 'blur(20px)';
+                    navInner.style.webkitBackdropFilter = 'blur(20px)';
+                    navInner.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.08)';
+                    navInner.querySelectorAll('a:not(.bg-\\[var\\(--navy-primary\\)\\]), button:not(.bg-\\[var\\(--navy-primary\\)\\])').forEach(el => {
+                        el.style.color = 'var(--navy-primary)';
+                    });
+                }
+            }
+
+            setInitialNavbarState();
 
             window.addEventListener('scroll', () => {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -775,15 +798,27 @@
                         el.style.color = 'var(--navy-primary)';
                     });
                 } else {
-                    // At top - transparent navbar with WHITE text
-                    navInner.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                    navInner.style.backdropFilter = 'blur(12px)';
-                    navInner.style.webkitBackdropFilter = 'blur(12px)';
-                    navInner.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.08)';
-                    // Keep white text
-                    navInner.querySelectorAll('a:not(.bg-\\[var\\(--navy-primary\\)\\]), button:not(.bg-\\[var\\(--navy-primary\\)\\])').forEach(el => {
-                        el.style.color = '#ffffff';
-                    });
+                    // At top - different behavior for homepage vs other pages
+                    if (isHomepage) {
+                        // Homepage: transparent navbar with WHITE text
+                        navInner.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                        navInner.style.backdropFilter = 'blur(12px)';
+                        navInner.style.webkitBackdropFilter = 'blur(12px)';
+                        navInner.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.08)';
+                        // Keep white text
+                        navInner.querySelectorAll('a:not(.bg-\\[var\\(--navy-primary\\)\\]), button:not(.bg-\\[var\\(--navy-primary\\)\\])').forEach(el => {
+                            el.style.color = '#ffffff';
+                        });
+                    } else {
+                        // Other pages: solid white with DARK text
+                        navInner.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                        navInner.style.backdropFilter = 'blur(20px)';
+                        navInner.style.webkitBackdropFilter = 'blur(20px)';
+                        navInner.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.08)';
+                        navInner.querySelectorAll('a:not(.bg-\\[var\\(--navy-primary\\)\\]), button:not(.bg-\\[var\\(--navy-primary\\)\\])').forEach(el => {
+                            el.style.color = 'var(--navy-primary)';
+                        });
+                    }
                 }
 
                 lastScrollTop = scrollTop;
