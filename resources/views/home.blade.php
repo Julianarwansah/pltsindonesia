@@ -2,77 +2,39 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient py-20 lg:py-32 px-6 lg:px-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left fade-in-left">
-                    <h1 class="text-5xl lg:text-6xl font-display font-bold mb-6" style="color: var(--solar-blue-dark);">
-                        Solusi Energi Terbarukan
-                    </h1>
-                    <p class="text-lg lg:text-xl text-gray-700 mb-8 leading-relaxed">
-                        Panel surya berkualitas tinggi dengan instalasi profesional untuk masa depan yang lebih hijau dan
-                        hemat energi.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#produk" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
-                            <i class="fas fa-solar-panel mr-2"></i> Lihat Produk
-                        </a>
-                        <a href="#tentang"
-                            class="px-8 py-4 rounded-lg font-semibold text-lg inline-block border-2 transition-all hover:bg-white"
-                            style="border-color: var(--solar-blue); color: var(--solar-blue);">
-                            <i class="fas fa-info-circle mr-2"></i> Tentang Kami
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden lg:block fade-in-right">
-                    <div class="hero-interactive-container" id="heroInteractive">
-                        <!-- Main Card with 3D Tilt Effect -->
-                        <div class="hero-tilt-card">
-                            <div class="hero-card-inner">
-                                <!-- Front Card -->
-                                <div class="hero-card-front">
-                                    <div class="bg-white p-8 rounded-3xl shadow-2xl h-full">
-                                        <div class="rounded-xl overflow-hidden h-full">
-                                            <img src="{{ asset('img/hero-plts.png') }}" alt="Antbox Hero"
-                                                class="w-full h-full object-contain">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Overlay Info (appears on hover) -->
-                                <div class="hero-card-overlay">
-                                    <div
-                                        class="bg-gradient-to-t from-black/80 via-black/50 to-transparent p-8 rounded-3xl h-full flex flex-col justify-end">
-                                        <div class="text-white">
-                                            <h3 class="text-3xl font-display font-bold mb-3">Solusi Energi Terbarukan</h3>
-                                            <p class="text-lg mb-4 opacity-90">Panel surya berkualitas, instalasi
-                                                profesional</p>
-                                            <div class="flex gap-3">
-                                                <a href="{{ route('produk.list') }}"
-                                                    class="px-6 py-3 bg-white text-solar-blue font-semibold rounded-xl hover:scale-105 transition-transform">
-                                                    <i class="fas fa-solar-panel mr-2"></i>Lihat Produk
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Floating Elements -->
-                        <div class="hero-float-badge hero-float-1">
-                            <i class="fas fa-leaf"></i>
-                            <span>Ramah Lingkungan</span>
-                        </div>
-                        <div class="hero-float-badge hero-float-2">
-                            <i class="fas fa-bolt"></i>
-                            <span>Hemat Energi</span>
-                        </div>
-                        <div class="hero-float-badge hero-float-3">
-                            <i class="fas fa-tools"></i>
-                            <span>Instalasi Profesional</span>
-                        </div>
-                    </div>
-                </div>
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="{{ asset('img/hero-plts.png') }}" alt="PLTS Indonesia" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 text-center fade-in parallax" data-speed="-0.3">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 leading-tight">
+                Solusi Energi Surya untuk<br>
+                Hunian dan Bisnis Anda
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
+                Hemat biaya listrik dengan teknologi panel surya terpercaya. Layanan profesional dan 
+                terintegrasi untuk masa depan energi yang lebih cerah dan berkelanjutan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <a href="{{ route('produk.list') }}" class="btn-primary inline-block px-6 py-3 text-base">
+                    <i class="fas fa-solar-panel mr-2"></i> Lihat Produk
+                </a>
+                <a href="{{ route('kontak') }}"
+                    class="px-6 py-3 rounded-full font-semibold text-base inline-block border-2 border-white text-white transition-all hover:bg-white hover:text-[var(--navy-primary)]">
+                    <i class="fas fa-phone mr-2"></i> Hubungi Kami
+                </a>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#features" class="text-white/70 hover:text-white transition">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
         </div>
     </section>
 
@@ -81,31 +43,32 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="fade-in stagger-delay-1 text-center p-8 rounded-xl transition-all hover:shadow-lg"
-                    style="background-color: var(--solar-bg);">
+                    style="background-color: var(--gray-light);">
                     <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                        style="background-color: var(--solar-blue);">
+                        style="background-color: var(--accent-green);">
                         <i class="fas fa-bolt text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Hemat Energi</h3>
-                    <p class="text-gray-600">Kurangi tagihan listrik hingga 70% dengan panel surya berkualitas tinggi</p>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--navy-primary);">Hemat Energi</h3>
+                    <p style="color: var(--gray-medium);">Kurangi tagihan listrik hingga 70% dengan panel surya berkualitas
+                        tinggi</p>
                 </div>
                 <div class="fade-in stagger-delay-2 text-center p-8 rounded-xl transition-all hover:shadow-lg"
-                    style="background-color: var(--solar-bg);">
+                    style="background-color: var(--gray-light);">
                     <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                        style="background-color: var(--solar-green);">
+                        style="background-color: var(--accent-green);">
                         <i class="fas fa-leaf text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Ramah Lingkungan</h3>
-                    <p class="text-gray-600">Energi bersih yang mengurangi jejak karbon dan melindungi bumi</p>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--navy-primary);">Ramah Lingkungan</h3>
+                    <p style="color: var(--gray-medium);">Energi bersih yang mengurangi jejak karbon dan melindungi bumi</p>
                 </div>
                 <div class="fade-in stagger-delay-3 text-center p-8 rounded-xl transition-all hover:shadow-lg"
-                    style="background-color: var(--solar-bg);">
+                    style="background-color: var(--gray-light);">
                     <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                        style="background-color: var(--solar-yellow);">
+                        style="background-color: var(--navy-primary);">
                         <i class="fas fa-tools text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3" style="color: var(--solar-blue-dark);">Instalasi Profesional</h3>
-                    <p class="text-gray-600">Tim ahli berpengalaman untuk instalasi yang aman dan efisien</p>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--navy-primary);">Instalasi Profesional</h3>
+                    <p style="color: var(--gray-medium);">Tim ahli berpengalaman untuk instalasi yang aman dan efisien</p>
                 </div>
             </div>
         </div>
@@ -115,9 +78,9 @@
     <section class="py-20 px-6 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 fade-in">
-                <span class="text-[var(--solar-blue)] font-bold tracking-wider uppercase mb-2 block">PLTS Solutions</span>
+                <span class="text-[var(--accent-green)] font-bold tracking-wider uppercase mb-2 block">PLTS Solutions</span>
                 <h2 class="font-display section-title mb-4">Sistem PLTS untuk <br />Setiap Kebutuhan</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--gray-medium);">
                     Pilih sistem panel surya yang paling sesuai dengan kebutuhan energi Anda. Dari yang terhubung PLN hingga
                     mandiri sepenuhnya.
                 </p>
@@ -128,16 +91,17 @@
                 <div
                     class="group relative bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full fade-in stagger-delay-1">
                     <div
-                        class="absolute top-0 right-0 bg-[var(--solar-blue)] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        class="absolute top-0 right-0 bg-[var(--accent-green)] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                         Paling Populer
                     </div>
                     <div class="mb-6">
                         <div
-                            class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-[var(--solar-blue)] mb-4 group-hover:bg-[var(--solar-blue)] group-hover:text-white transition-colors duration-300">
+                            class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-[var(--navy-primary)] mb-4 group-hover:bg-[var(--accent-green)] group-hover:text-white transition-colors duration-300">
                             <i class="fas fa-city text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-gray-800 mb-3">PLTS On-Grid</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
+                        <h3 class="text-2xl font-display font-bold mb-3" style="color: var(--navy-primary);">PLTS On-Grid
+                        </h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--gray-medium);">
                             Sistem panel surya yang terhubung langsung ke jaringan PLN. Hemat biaya listrik dan bisa ekspor
                             kelebihan daya ke PLN.
                         </p>
@@ -145,23 +109,23 @@
 
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-start text-sm text-gray-700">
-                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <i class="fas fa-check-circle text-[var(--accent-green)] mt-1 mr-2"></i>
                             <span>Terhubung ke jaringan PLN</span>
                         </li>
                         <li class="flex items-start text-sm text-gray-700">
-                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <i class="fas fa-check-circle text-[var(--accent-green)] mt-1 mr-2"></i>
                             <span>Ekspor kW ke PLN (Net Metering)</span>
                         </li>
                         <li class="flex items-start text-sm text-gray-700">
-                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <i class="fas fa-check-circle text-[var(--accent-green)] mt-1 mr-2"></i>
                             <span>Investasi lebih terjangkau</span>
                         </li>
                         <li class="flex items-start text-sm text-gray-700">
-                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <i class="fas fa-check-circle text-[var(--accent-green)] mt-1 mr-2"></i>
                             <span>Tidak perlu baterai</span>
                         </li>
                         <li class="flex items-start text-sm text-gray-700">
-                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <i class="fas fa-check-circle text-[var(--accent-green)] mt-1 mr-2"></i>
                             <span>ROI 3-5 tahun</span>
                         </li>
                     </ul>
@@ -322,10 +286,10 @@
                                 @endif
                             </div>
                             <div class="p-5">
-                                <div class="text-xs font-semibold mb-2" style="color: var(--brown-light);">
+                                <div class="text-xs font-semibold mb-2" style="color: var(--accent-green);">
                                     {{$produk->kategori->nama_kategori ?? 'Produk'}}
                                 </div>
-                                <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--brown-dark);">
+                                <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--navy-primary);">
                                     {{$produk->nama_produk}}
                                 </h3>
                                 <div class="mb-4">
@@ -364,10 +328,10 @@
                             @endif
                         </div>
                         <div class="p-5">
-                            <div class="text-xs font-semibold mb-2" style="color: var(--brown-light);">
+                            <div class="text-xs font-semibold mb-2" style="color: var(--accent-green);">
                                 {{$produk->kategori->nama_kategori ?? 'Produk'}}
                             </div>
-                            <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--brown-dark);">
+                            <h3 class="font-bold text-lg mb-3 line-clamp-2" style="color: var(--navy-primary);">
                                 {{$produk->nama_produk}}
                             </h3>
                             <div class="mb-4">
@@ -381,7 +345,7 @@
                     </div>
                 @empty
                     <div class="col-span-4 text-center py-16">
-                        <i class="fas fa-box-open text-6xl mb-4" style="color: var(--brown-light);"></i>
+                        <i class="fas fa-box-open text-6xl mb-4" style="color: var(--accent-green);"></i>
                         <p class="text-gray-500 text-lg">Belum ada produk yang tersedia</p>
                     </div>
                 @endforelse
@@ -452,7 +416,8 @@
                                         @endif
                                     </div>
                                     <div class="ml-4 flex-1">
-                                        <h3 class="font-bold text-lg" style="color: var(--brown-dark);">{{ $testimoni->nama }}</h3>
+                                        <h3 class="font-bold text-lg" style="color: var(--navy-primary);">{{ $testimoni->nama }}
+                                        </h3>
                                         @if($testimoni->pekerjaan)
                                             <p class="text-sm text-gray-500">{{ $testimoni->pekerjaan }}</p>
                                         @endif
@@ -488,11 +453,11 @@
                     <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
                         style="background: linear-gradient(135deg, var(--cream) 0%, var(--brown-light) 100%);"></div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Tips Mengatur Rak Sepatu</h3>
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--navy-primary);">Tips Mengatur Rak Sepatu</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Simak tips praktis mengatur rak sepatu agar lebih
                             rapi dan estetik...</p>
                         <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
-                            style="color: var(--brown);">
+                            style="color: var(--accent-green);">
                             Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                         </a>
                     </div>
@@ -502,11 +467,12 @@
                     <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
                         style="background: linear-gradient(135deg, var(--brown-light) 0%, var(--brown) 100%);"></div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Desain Interior Minimalis</h3>
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--navy-primary);">Desain Interior Minimalis
+                        </h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Panduan menciptakan interior minimalis yang
                             nyaman dan fungsional...</p>
                         <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
-                            style="color: var(--brown);">
+                            style="color: var(--accent-green);">
                             Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                         </a>
                     </div>
@@ -516,11 +482,11 @@
                     <div class="aspect-[4/3] rounded-t-xl overflow-hidden"
                         style="background: linear-gradient(135deg, var(--brown) 0%, var(--brown-dark) 100%);"></div>
                     <div class="p-6">
-                        <h3 class="font-bold text-lg mb-2" style="color: var(--brown-dark);">Solusi Ruang Kecil</h3>
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--navy-primary);">Solusi Ruang Kecil</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Maksimalkan ruang terbatas dengan furnitur
                             penyimpanan yang tepat...</p>
                         <a href="{{ route('artikel.list') }}" class="text-sm font-semibold hover:underline"
-                            style="color: var(--brown);">
+                            style="color: var(--accent-green);">
                             Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i>
                         </a>
                     </div>
