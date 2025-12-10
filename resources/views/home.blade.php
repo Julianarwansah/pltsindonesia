@@ -111,19 +111,191 @@
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="py-12 px-6 lg:px-12">
+    <!-- PLTS Solutions Section -->
+    <section class="py-20 px-6 lg:px-12 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-center font-display section-title mb-8 fade-in">Kategori Produk</h2>
-            <div class="flex flex-wrap justify-center gap-4 fade-in">
-                <a href="#produk" class="category-badge px-6 py-3 rounded-full font-semibold">
-                    <i class="fas fa-th mr-2"></i> Semua Produk
-                </a>
-                @foreach($categories as $cat)
-                    <a href="#produk" class="category-badge px-6 py-3 rounded-full font-semibold">
-                        {{$cat->nama_kategori}}
-                    </a>
-                @endforeach
+            <div class="text-center mb-16 fade-in">
+                <span class="text-[var(--solar-blue)] font-bold tracking-wider uppercase mb-2 block">PLTS Solutions</span>
+                <h2 class="font-display section-title mb-4">Sistem PLTS untuk <br />Setiap Kebutuhan</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Pilih sistem panel surya yang paling sesuai dengan kebutuhan energi Anda. Dari yang terhubung PLN hingga
+                    mandiri sepenuhnya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <!-- On-Grid Card -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full fade-in stagger-delay-1">
+                    <div
+                        class="absolute top-0 right-0 bg-[var(--solar-blue)] text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        Paling Populer
+                    </div>
+                    <div class="mb-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-[var(--solar-blue)] mb-4 group-hover:bg-[var(--solar-blue)] group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-city text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-gray-800 mb-3">PLTS On-Grid</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Sistem panel surya yang terhubung langsung ke jaringan PLN. Hemat biaya listrik dan bisa ekspor
+                            kelebihan daya ke PLN.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <span>Terhubung ke jaringan PLN</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <span>Ekspor kW ke PLN (Net Metering)</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <span>Investasi lebih terjangkau</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <span>Tidak perlu baterai</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-[var(--solar-blue)] mt-1 mr-2"></i>
+                            <span>ROI 3-5 tahun</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto">
+                        <div class="mb-4">
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Ideal untuk:</p>
+                            <p class="text-sm text-gray-700 font-medium">Rumah tinggal, perkantoran, dan bisnis yang sudah
+                                terhubung PLN</p>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6281258887895&text=Halo%20PLTS%20Indonesia,%20saya%20tertarik%20konsultasi%20PLTS%20On-Grid"
+                            target="_blank"
+                            class="block w-full py-3 px-4 bg-gray-50 hover:bg-[var(--solar-blue)] text-gray-800 hover:text-white text-center rounded-xl font-semibold transition-all duration-300 border border-gray-200 hover:border-transparent">
+                            Konsultasi On-Grid
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Off-Grid Card -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full fade-in stagger-delay-2">
+                    <div
+                        class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        100% Mandiri
+                    </div>
+                    <div class="mb-6">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center text-green-600 mb-4 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-mountain text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-gray-800 mb-3">PLTS Off-Grid</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Sistem mandiri yang tidak terhubung ke PLN. Cocok untuk lokasi terpencil atau ingin sepenuhnya
+                            independen.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>100% independen dari PLN</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Menggunakan sistem baterai</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Cadangan listrik 24/7</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Cocok daerah tanpa PLN</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Ramah lingkungan 100%</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto">
+                        <div class="mb-4">
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Ideal untuk:</p>
+                            <p class="text-sm text-gray-700 font-medium">Lokasi terpencil, pulau, villa, rumah pedesaan
+                                tanpa akses PLN</p>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6281258887895&text=Halo%20PLTS%20Indonesia,%20saya%20tertarik%20konsultasi%20PLTS%20Off-Grid"
+                            target="_blank"
+                            class="block w-full py-3 px-4 bg-gray-50 hover:bg-green-600 text-gray-800 hover:text-white text-center rounded-xl font-semibold transition-all duration-300 border border-gray-200 hover:border-transparent">
+                            Konsultasi Off-Grid
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hybrid Card -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-lg border-2 border-[var(--solar-blue)]/10 hover:border-[var(--solar-blue)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full fade-in stagger-delay-3 relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
+                        Terbaik Keduanya
+                    </div>
+                    <!-- Background Glow Effect -->
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-[var(--solar-blue)]/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none">
+                    </div>
+
+                    <div class="mb-6 relative z-10">
+                        <div
+                            class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 mb-4 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                            <i class="fas fa-random text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-gray-800 mb-3">PLTS Hybrid</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Kombinasi terbaik dari On-Grid dan Off-Grid. Terhubung PLN dengan backup baterai untuk keandalan
+                            maksimal.
+                        </p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8 flex-1 relative z-10">
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+                            <span>Terhubung PLN + Baterai</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+                            <span>Backup saat pemadaman</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+                            <span>Fleksibilitas maksimal</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+                            <span>Optimasi penggunaan energi</span>
+                        </li>
+                        <li class="flex items-start text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-2"></i>
+                            <span>Hemat & tetap aman</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-auto relative z-10">
+                        <div class="mb-4">
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Ideal untuk:</p>
+                            <p class="text-sm text-gray-700 font-medium">Rumah sakit, data center, bisnis kritis yang butuh
+                                uptime tinggi</p>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6281258887895&text=Halo%20PLTS%20Indonesia,%20saya%20tertarik%20konsultasi%20PLTS%20Hybrid"
+                            target="_blank"
+                            class="block w-full py-3 px-4 bg-gray-50 hover:bg-purple-600 text-gray-800 hover:text-white text-center rounded-xl font-semibold transition-all duration-300 border border-gray-200 hover:border-transparent">
+                            Konsultasi Hybrid
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -269,8 +441,7 @@
                                 <div class="flex items-center mb-4">
                                     <div class="flex-shrink-0">
                                         @if($testimoni->foto)
-                                            <img src="{{ asset('storage/' . $testimoni->foto) }}"
-                                                alt="{{ $testimoni->nama }}"
+                                            <img src="{{ asset('storage/' . $testimoni->foto) }}" alt="{{ $testimoni->nama }}"
                                                 class="w-16 h-16 rounded-full object-cover border-2"
                                                 style="border-color: var(--brown-light);">
                                         @else

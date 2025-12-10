@@ -21,14 +21,14 @@
                     <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Search</label>
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
                         placeholder="Search action, table, user..."
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                 </div>
 
                 <!-- Action Filter -->
                 <div>
                     <label for="action" class="block text-sm font-medium text-gray-700 mb-2">Action</label>
                     <select id="action" name="action"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                         <option value="">All Actions</option>
                         @foreach($actions as $action)
                             <option value="{{ $action }}" {{ request('action') == $action ? 'selected' : '' }}>
@@ -42,7 +42,7 @@
                 <div>
                     <label for="user_id" class="block text-sm font-medium text-gray-700 mb-2">User</label>
                     <select id="user_id" name="user_id"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                         <option value="">All Users</option>
                         @foreach($users as $user)
                             <option value="{{ $user->id }}" {{ request('user_id') == $user->id ? 'selected' : '' }}>
@@ -56,7 +56,7 @@
                 <div>
                     <label for="table" class="block text-sm font-medium text-gray-700 mb-2">Table</label>
                     <select id="table" name="table"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                         <option value="">All Tables</option>
                         @foreach($tables as $table)
                             <option value="{{ $table }}" {{ request('table') == $table ? 'selected' : '' }}>
@@ -70,20 +70,20 @@
                 <div>
                     <label for="date_from" class="block text-sm font-medium text-gray-700 mb-2">Date From</label>
                     <input type="date" id="date_from" name="date_from" value="{{ request('date_from') }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                 </div>
 
                 <!-- Date To -->
                 <div>
                     <label for="date_to" class="block text-sm font-medium text-gray-700 mb-2">Date To</label>
                     <input type="date" id="date_to" name="date_to" value="{{ request('date_to') }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--solar-blue)] focus:border-transparent">
                 </div>
             </div>
 
             <!-- Filter Buttons -->
             <div class="flex gap-3">
-                <button type="submit" class="px-6 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors">
+                <button type="submit" class="px-6 py-2 bg-[var(--solar-blue)] hover:bg-[var(--solar-blue-dark)] text-white rounded-lg transition-colors">
                     <i class="fas fa-filter mr-2"></i>
                     Apply Filters
                 </button>
@@ -98,32 +98,32 @@
                 <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200">
                     <span class="text-sm text-gray-600">Active Filters:</span>
                     @if(request('search'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             Search: {{ request('search') }}
                         </span>
                     @endif
                     @if(request('action'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             Action: {{ ucfirst(request('action')) }}
                         </span>
                     @endif
                     @if(request('user_id'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             User: {{ $users->find(request('user_id'))->name ?? 'Unknown' }}
                         </span>
                     @endif
                     @if(request('table'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             Table: {{ request('table') }}
                         </span>
                     @endif
                     @if(request('date_from'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             From: {{ request('date_from') }}
                         </span>
                     @endif
                     @if(request('date_to'))
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm">
+                        <span class="px-3 py-1 bg-sky-100 text-[var(--solar-blue-dark)] rounded-full text-sm">
                             To: {{ request('date_to') }}
                         </span>
                     @endif
@@ -184,7 +184,7 @@
                                 {{ $log->table_name }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                <button onclick="showDetails('{{ $log->id }}')" class="text-amber-600 hover:text-amber-700">
+                                <button onclick="showDetails('{{ $log->id }}')" class="text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">
                                     <i class="fas fa-eye mr-1"></i>
                                     View Details
                                 </button>
@@ -202,7 +202,7 @@
                                 <i class="fas fa-inbox text-4xl mb-3 text-gray-300"></i>
                                 <p class="text-lg">No activity logs found</p>
                                 @if(request()->hasAny(['search', 'action', 'user_id', 'table', 'date_from', 'date_to']))
-                                    <a href="{{ route('admin.activity-logs.index') }}" class="mt-2 inline-block text-amber-600 hover:text-amber-700">
+                                    <a href="{{ route('admin.activity-logs.index') }}" class="mt-2 inline-block text-[var(--solar-blue)] hover:text-[var(--solar-blue-dark)]">
                                         Clear filters to see all logs
                                     </a>
                                 @endif

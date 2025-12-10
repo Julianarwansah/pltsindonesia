@@ -231,44 +231,44 @@
                 </div>
 
                 <!-- Cloudinary Benefits -->
-                <div
-                    class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg shadow-sm border border-purple-200 p-4 md:p-6">
+                <div class="bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg shadow-sm border border-sky-200 p-4 md:p-6">
                     <div class="flex items-center mb-3">
-                        <svg class="w-6 h-6 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-[var(--solar-blue)] mr-2" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
                             </path>
                         </svg>
-                        <h3 class="text-lg font-semibold text-purple-800">Cloudinary Benefits</h3>
+                        <h3 class="text-lg font-semibold text-[var(--solar-blue-dark)]">Cloudinary Benefits</h3>
                     </div>
-                    <ul class="space-y-2 text-sm text-purple-800">
+                    <ul class="space-y-2 text-sm text-[var(--solar-blue-dark)]">
                         <li class="flex items-start">
-                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-purple-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[var(--solar-blue)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                             <span><strong>Auto Optimization:</strong> Images optimized automatically</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-purple-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[var(--solar-blue)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                             <span><strong>Fast Delivery:</strong> Global CDN for quick loading</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-purple-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[var(--solar-blue)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
                             <span><strong>Responsive:</strong> Auto-resize for different devices</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-purple-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0 text-[var(--solar-blue)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
                                 </path>
                             </svg>
