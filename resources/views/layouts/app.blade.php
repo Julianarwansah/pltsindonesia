@@ -9,6 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         @layer utilities {
@@ -327,7 +328,75 @@
             </a>
             <div class="hidden md:flex space-x-8">
                 <a href="{{ route('home') }}" class="nav-link font-medium">Home</a>
-                <a href="{{ route('produk.list') }}" class="nav-link font-medium">Produk</a>
+
+                <!-- Produk Dropdown -->
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="nav-link font-medium flex items-center gap-1" @click="open = !open">
+                        Produk
+                        <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': open }" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95"
+                        class="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
+                        @click.away="open = false">
+
+                        <a href="{{ route('produk.detail', 'pembangkit-listrik-tenaga-surya-off-grid') }}"
+                            class="block px-4 py-3 hover:bg-sky-50 transition-colors group">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-100 transition-colors">
+                                    <i class="fas fa-mountain text-green-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800 group-hover:text-[var(--solar-blue)]">PLTS
+                                        OFF Grid</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">Sistem mandiri dengan baterai</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('produk.detail', 'paket-plts-on-grid-industrial') }}"
+                            class="block px-4 py-3 hover:bg-sky-50 transition-colors group">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+                                    <i class="fas fa-industry text-[var(--solar-blue)]"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800 group-hover:text-[var(--solar-blue)]">PLTS
+                                        On Grid Industrial</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">Untuk pabrik & industri</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="{{ route('produk.detail', 'paket-plts-on-grid-residential') }}"
+                            class="block px-4 py-3 hover:bg-sky-50 transition-colors group">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors">
+                                    <i class="fas fa-home text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-800 group-hover:text-[var(--solar-blue)]">PLTS
+                                        On Grid Residential</div>
+                                    <div class="text-xs text-gray-500 mt-0.5">Untuk rumah tinggal</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <a href="{{ route('artikel.list') }}" class="nav-link font-medium">Artikel</a>
                 <a href="{{ route('tentang') }}" class="nav-link font-medium">Tentang</a>
                 <a href="{{ route('kontak') }}" class="nav-link font-medium">Kontak</a>

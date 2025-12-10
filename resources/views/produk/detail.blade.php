@@ -100,7 +100,8 @@
                     <!-- Product Specifications -->
                     @if($produk->berat || $produk->dimensi)
                         <div class="bg-[var(--solar-cream)] p-6 rounded-xl mb-6">
-                            <h3 class="font-display font-bold text-lg mb-3" style="color: var(--solar-blue-dark);">Spesifikasi</h3>
+                            <h3 class="font-display font-bold text-lg mb-3" style="color: var(--solar-blue-dark);">Spesifikasi
+                            </h3>
                             <div class="space-y-2">
                                 @if($produk->dimensi)
                                     <div class="flex">
@@ -166,7 +167,7 @@
                 <div id="content-description" class="tab-content">
                     <div class="prose max-w-none">
                         @if($produk->deskripsi_lengkap)
-                            {!! nl2br(e($produk->deskripsi_lengkap)) !!}
+                            {!! $produk->deskripsi_lengkap !!}
                         @else
                             <p class="text-gray-600">Deskripsi lengkap produk akan segera ditambahkan.</p>
                         @endif
