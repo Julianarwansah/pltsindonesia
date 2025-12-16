@@ -548,7 +548,110 @@
         @yield('content')
     </main>
 
-    <footer class="bg-[var(--navy-primary)] mt-20 py-12 px-6 lg:px-12">
+    <!-- WhatsApp Contact Form Section -->
+    <section class="bg-gradient-to-br from-[var(--accent-green)] to-[var(--accent-light-green)] py-16 px-6 lg:px-12">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Left Side - Info -->
+                    <div class="bg-gradient-to-br from-[var(--navy-primary)] to-[#243B55] p-8 lg:p-10 text-white">
+                        <div class="h-full flex flex-col justify-center">
+                            <div class="mb-6">
+                                <div class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center mb-4 shadow-lg">
+                                    <i class="fab fa-whatsapp text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl font-display font-bold mb-3">Hubungi Kami via WhatsApp</h3>
+                                <p class="text-white/80 leading-relaxed">Konsultasi gratis untuk kebutuhan PLTS Anda. Tim kami siap membantu 24/7.</p>
+                            </div>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-check text-[#25D366]"></i>
+                                    </div>
+                                    <span class="text-sm">Respon Cepat</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-check text-[#25D366]"></i>
+                                    </div>
+                                    <span class="text-sm">Konsultasi Gratis</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-check text-[#25D366]"></i>
+                                    </div>
+                                    <span class="text-sm">Penawaran Terbaik</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 border-t border-white/20">
+                                <p class="text-sm text-white/60 mb-2">Atau hubungi langsung:</p>
+                                <a href="https://wa.me/6281258885595" class="text-lg font-semibold hover:text-[#25D366] transition flex items-center gap-2">
+                                    <i class="fab fa-whatsapp"></i>
+                                    +62 812-5888-5595
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - Form -->
+                    <div class="p-8 lg:p-10">
+                        <form id="whatsappForm" class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-user text-[var(--accent-green)] mr-2"></i>Nama Lengkap
+                                </label>
+                                <input type="text" id="nama" name="nama" required
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--accent-green)] focus:outline-none transition-colors"
+                                    placeholder="Masukkan nama Anda">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-phone text-[var(--accent-green)] mr-2"></i>Nomor Telepon
+                                </label>
+                                <input type="tel" id="telepon" name="telepon" required
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--accent-green)] focus:outline-none transition-colors"
+                                    placeholder="08xx xxxx xxxx">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-solar-panel text-[var(--accent-green)] mr-2"></i>Produk yang Diminati
+                                </label>
+                                <select id="produk" name="produk" required
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--accent-green)] focus:outline-none transition-colors">
+                                    <option value="">Pilih Produk</option>
+                                    <option value="PLTS OFF Grid">PLTS OFF Grid</option>
+                                    <option value="PLTS On Grid Industrial">PLTS On Grid Industrial</option>
+                                    <option value="PLTS On Grid Residential">PLTS On Grid Residential</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-comment-dots text-[var(--accent-green)] mr-2"></i>Pesan
+                                </label>
+                                <textarea id="pesan" name="pesan" rows="4" required
+                                    class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[var(--accent-green)] focus:outline-none transition-colors resize-none"
+                                    placeholder="Sampaikan kebutuhan atau pertanyaan Anda..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                                <span>Kirim via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[var(--navy-primary)] py-12 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
@@ -855,6 +958,39 @@
             });
 
             // Smooth Wheel Scroll removed - menggunakan browser default untuk scroll lebih instant
+
+            // WhatsApp Form Handler
+            const whatsappForm = document.getElementById('whatsappForm');
+            if (whatsappForm) {
+                whatsappForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Get form values
+                    const nama = document.getElementById('nama').value;
+                    const telepon = document.getElementById('telepon').value;
+                    const produk = document.getElementById('produk').value;
+                    const pesan = document.getElementById('pesan').value;
+
+                    // Format WhatsApp message
+                    const message = `*Halo, saya ingin berkonsultasi*\n\n` +
+                                  `*Nama:* ${nama}\n` +
+                                  `*Telepon:* ${telepon}\n` +
+                                  `*Produk yang Diminati:* ${produk}\n` +
+                                  `*Pesan:* ${pesan}`;
+
+                    // Encode message for URL
+                    const encodedMessage = encodeURIComponent(message);
+
+                    // WhatsApp URL
+                    const whatsappURL = `https://wa.me/6281258885595?text=${encodedMessage}`;
+
+                    // Open WhatsApp in new tab
+                    window.open(whatsappURL, '_blank');
+
+                    // Optional: Reset form after submission
+                    whatsappForm.reset();
+                });
+            }
         });
 
         // Performance optimization: Debounce scroll events
